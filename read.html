@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+<h2>Image Modal</h2>
+<p>In this example, we use CSS to create a modal (dialog box) that is hidden by default.</p>
+<p>We use JavaScript to trigger the modal and to display the current image inside the modal when it is clicked on. Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.</p>
+
+<img id="myImg" alt="Cover" style="width:100%;max-width:300px">
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <button id="before-btn">
+    <i class="fas fa-arrow-circle-left"></i>
+</button>
+
+<!-- The Book -->
+<div id="book" class="book">
+    <!-- Paper 1 -->
+    <div id="p1" class="paper">
+        <div class="front">
+            <div id="f1" class="front-content">
+                <h1 class="book-title">Little Dog</h1>
+                <img class="cover-img" src="rat.jpg" alt="dog">
+            </div>
+        </div>
+        <form id="myForm" autocomplete="off">
+        <div class="back">
+            <div id="b1" class="back-content">
+                <div class="form-group">
+                    <p>Once upon a time there was a <input type="text" id="search" class="form-control">. They lived in a <input type="text" id="search2" class="form-control">. On a cold winter night they were on their way to <input type="text" id="search3" class="form-control">. It wasn't long before they got lost. They looked around, but all they could see were trees. Nervously, they felt into their bag for <input type="text" id="search4" class="form-control">, but it was nowhere to be found! They began to panic.
+                    </p>
+                    <!--<button>Download</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+    <!-- Paper 2 -->
+    <div id="p2" class="paper">
+        <div class="front">
+            <div id="f2" class="front-content">
+                <img class="inside-img" src="rat.jpg" alt="dog">
+            </div>
+        </div>
+        <div class="back">
+            <div id="b2" class="back-content">
+                <h1>An Awesome Page</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Paper 3 -->
+    <div id="p3" class="paper">
+        <div class="front">
+            <div id="f3" class="front-content">
+                <img class="inside-img" src="rat.jpg" alt="dog">
+            </div>
+        </div>
+        <div class="back">
+            <div id="b3" class="back-content">
+                <h1>The Good Bye</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button id="after-btn">
+    <i class="fas fa-arrow-circle-right"></i>
+</button>
+  <div id="caption"></div>
+</div>
+
+
+
+<section id="read">
+
+</section>
+
+    <section id="change">
+        <button onclick=" window.location.href= 'write.html'">Write my story.</button>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="mainr.js"></script>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
+    }
+    </script>
+</body>
+</html>
